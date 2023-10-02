@@ -1,5 +1,3 @@
-Version 1.0 -> project Upload
+Version 1.0 -> Project upload
 
-Version 1.1 -> 
-
-Version 1.2 -> 
+Version 1.1 -> Scroll reveal added
