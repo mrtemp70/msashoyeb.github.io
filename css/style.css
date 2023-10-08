@@ -379,22 +379,12 @@ body {
   align-items: center;
 }
 
-#textbox2 {
-  font-family: Arial, sans-serif;
-  background-color: #b4b3b3;
-  color: #000000;
-  border: none;
-  text-align: center;
-  font-style: italic;
+.g-recaptcha {
+  transform: scale(0.8); /* Adjust the scale factor as needed */
+  transform-origin: 0 0;
 }
 
-/* Style the reload icon (adjust the icon class as needed) */
-.reload-icon {
-  margin-top: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.5s ease;
-}
+countdown_msg
 
 .contact-gif {
   margin-top: 60px;
@@ -415,21 +405,15 @@ body {
   .section-image {
     margin-top: 20px;
   }
-  #textbox1 {
-    margin-bottom: 10px;
-  }
-  #textbox2 {
-    font-family: Arial, sans-serif;
-    background-color: #b4b3b3;
-    color: #000000;
-    border: none;
-    text-align: center;
-    font-style: italic;
-  }
   .contact-gif {
     margin-top: -10px;
     width: 300px;
     height: 200px;
+  }
+  .form-group-captcha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 /* ---------------------------------- Footer -----------------------------------------*/

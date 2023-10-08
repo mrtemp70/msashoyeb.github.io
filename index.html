@@ -17,10 +17,13 @@
     <link rel="stylesheet" href="vendor/font-awesome_5.15.1_css_all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Scroll Reveal -->
     <script src="vendor/unpkg.com_scrollreveal@4.0.9_dist_scrollreveal.js"></script>
+    <!-- Google Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
-<body onload="generateCaptcha();">
+<body>
     <!-- Container with a specific width -->
     <div class="container">
 
@@ -68,7 +71,8 @@
                         <h3 class="scroll-reveal">Hello, It's me,</h3>
                         <h1 class="scroll-reveal"><span>Showyeab Ahmed</span></h1>
                         <h3 class="scroll-reveal">I'm a <span class="auto"></span></h3>
-                        <p class="scroll-reveal">I've had a profound passion for technology from the very beginning, which drove me to
+                        <p class="scroll-reveal">I've had a profound passion for technology from the very beginning,
+                            which drove me to
                             successfully earn my B.Sc. in Computer Science and Engineering from American International
                             University Bangladesh. Over the course of my professional journey, I've actively engaged in
                             various projects to refine and enhance my existing skill set. Moreover, I consistently seek
@@ -332,7 +336,8 @@
                         <img class="project-img scroll-reveal" src="media/digiCVProject.png" alt="Project 1">
                         <div class="project-text scroll-reveal">
                             <h4 class="scroll-reveal">DigiCV</h4>
-                            <p class="scroll-reveal">This project incorporates clean architecture, ASP.NET, worker services, and various other
+                            <p class="scroll-reveal">This project incorporates clean architecture, ASP.NET, worker
+                                services, and various other
                                 technologies.</p>
                             <a href="#" class="project-button scroll-reveal" target="_blank">View</a>
                         </div>
@@ -342,7 +347,8 @@
                         <img class="project-img scroll-reveal" src="media/bookishProject.png" alt="Project 2">
                         <div class="project-text scroll-reveal">
                             <h4 class="scroll-reveal">Bookish</h4>
-                            <p class="scroll-reveal">This project was undertaken at university, and it involved the use of the .NET Framework.
+                            <p class="scroll-reveal">This project was undertaken at university, and it involved the use
+                                of the .NET Framework.
                             </p>
                             <a href="https://github.com/msashoyeb/Bookish" class="project-button scroll-reveal"
                                 target="_blank">View</a>
@@ -352,10 +358,11 @@
                         <img class="project-img scroll-reveal" src="media/rentcarProject.png" alt="Project 3">
                         <div class="project-text scroll-reveal">
                             <h4 class="scroll-reveal">Vehical Rental Application</h4>
-                            <p class="scroll-reveal">This project was also undertaken at university, and it involved the use of PHP, Ajax,
+                            <p class="scroll-reveal">This project was also undertaken at university, and it involved the
+                                use of PHP, Ajax,
                                 JQuery, Json, XML.</p>
-                            <a href="https://github.com/msashoyeb/Vehicle-Rental-Application-" class="project-button scroll-reveal"
-                                target="_blank">View</a>
+                            <a href="https://github.com/msashoyeb/Vehicle-Rental-Application-"
+                                class="project-button scroll-reveal" target="_blank">View</a>
                         </div>
                     </div>
                     <!-- Add more project boxes as needed -->
@@ -369,7 +376,8 @@
                 <div class="section-header scroll-reveal">Contact Me</div>
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="contact-form" name="submit-to-google-sheet">
+                        <form id="myForm" class="contact-form" name="submit-to-google-sheet"
+                            onsubmit="return checkRecaptcha()">
                             <div class="form-group scroll-reveal">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="Name" placeholder="Your Name" required>
@@ -385,27 +393,19 @@
                             </div>
                             <div class="form-group scroll-reveal">
                                 <div class="form-group-captcha">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 mb-3">
-                                            <input type="text" id="textbox1" placeholder="Enter Captcha"
-                                                class="form-control">
-                                        </div>
-                                        <div class="col-md-3 col-sm-6 mb-3">
-                                            <input type="text" id="textbox2" readonly>
-                                        </div>
-                                        <div class="col-md-3 col-sm-6">
-                                            <i id="reloadIcon" class="fas fa-sync-alt reload-icon"
-                                                onclick="rotateAndReload();"></i>
-                                        </div>
+                                    <div class="g-recaptcha" data-sitekey="6Ldzb4MoAAAAAA1kchMnamV9sPV6iuc4fIJlx3up">
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-button scroll-reveal">
-                                <button class="btn btn-border" id="submitBtn" type="submit" disabled>Submit</button>
+                                <button class="btn btn-border" id="submitBtn" type="submit">Submit</button>
                             </div>
                         </form>
-                        <p id="countdown_msg" style="text-align: center;"></p>
-                        <p id="contact_msg" style="text-align: center;"></p>
+                        <br />
+                        <div style="text-align: center;">
+                            <p id="countdown_msg"></p>
+                            <p id="contact_msg"></p>
+                        </div>
                     </div>
                     <div class="col-md-6 section-image">
                         <!-- <img src="https://via.placeholder.com/400x300" alt="Contact Image"> -->
@@ -439,7 +439,6 @@
     <script src="js/scrollProgress.js"></script>
     <script src="js/autoTyped.js"></script>
     <script src="js/contactMe.js"></script>
-    <script src="js/captchaGenerator.js"></script>
     <script src="js/rotateIcon.js"></script>
     <script src="js/ScrollReveal.js"></script>
 </body>
